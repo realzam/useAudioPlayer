@@ -23,51 +23,38 @@
         "howler.js"
     ],
     "scripts": {
-        "start": "tsdx watch",
-        "build": "tsdx build",
+        "start": "tsc watch",
+        "build": "tsc",
         "test": "echo 'skipping tests for now'",
         "test:integration": "cypress run",
         "lint": "tsc --noEmit && eslint src --cache --max-warnings=25",
         "lint:fix": "eslint src/**/*.ts{,x} --fix",
-        "prepare": "tsdx build",
-        "preversion": "yarn test && yarn build",
-        "release": "yarn version && yarn publish --non-interactive && echo 'Remember to push new commit/tags to Github'"
+        "prepare": "tsc",
+        "preversion": "pnpm test && pnpm build",
+        "release": "pnpm version && pnpm publish --non-interactive && echo 'Remember to push new commit/tags to Github'"
     },
     "devDependencies": {
-        "@testing-library/react-hooks": "^3.4.1",
-        "@types/howler": "^2.2.0",
-        "@types/jest": "^24.0.25",
-        "@types/react": "^18.2.5",
-        "@typescript-eslint/eslint-plugin": "^5.59.2",
-        "@typescript-eslint/parser": "^5.59.2",
-        "cypress": "^4.1.0",
-        "eslint": "^8.39.0",
-        "eslint-plugin-cypress": "^2.10.3",
-        "eslint-plugin-import": "^2.27.5",
-        "eslint-plugin-prettier": "^4.2.1",
-        "eslint-plugin-react": "^7.32.2",
+        "@types/howler": "^2.2.11",
+        "@types/jest": "^29.5.10",
+        "@types/react": "^18.2.42",
+        "@typescript-eslint/eslint-plugin": "^6.13.2",
+        "@typescript-eslint/parser": "^6.13.2",
+        "cypress": "^13.6.1",
+        "eslint": "^8.55.0",
+        "eslint-plugin-cypress": "^2.15.1",
+        "eslint-plugin-import": "^2.29.0",
+        "eslint-plugin-prettier": "^5.0.1",
+        "eslint-plugin-react": "^7.33.2",
         "eslint-plugin-react-hooks": "^4.6.0",
-        "husky": "^3.1.0",
-        "react": "^18",
-        "react-dom": "^18",
-        "react-test-renderer": "^16.12.0",
-        "tsdx": "^0.13.1",
-        "tslib": "^1.10.0",
-        "typescript": "^5.0.4"
-    },
-    "peerDependencies": {
-        "react": ">=16.8"
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "react-test-renderer": "^18.2.0",
+        "tsdx": "^0.14.1",
+        "tslib": "^2.6.2",
+        "typescript": "^5.3.2"
     },
     "dependencies": {
-        "howler": "^2.2.3"
-    },
-    "resolutions": {
-        "typescript": "5.0.4"
-    },
-    "husky": {
-        "hooks": {
-            "pre-commit": "yarn lint"
-        }
+        "howler": "^2.2.4"
     },
     "prettier": {
         "tabWidth": 4,
